@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sport Psychology Test</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .test-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .test-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        padding: 20px;
+        background: #1a1f2e;
+        border-left: 4px solid #3b82f6;
+      }
+
+      .test-stats {
+        text-align: right;
+        color: #9ca3af;
+        font-size: 0.9em;
+      }
+
+      .test-stats strong {
+        color: #3b82f6;
+        font-size: 1.2em;
+      }
+
+      .question-container {
+        background: #1a1f2e;
+        border: 1px solid #2a2f3e;
+        border-left: 3px solid #3b82f6;
+        padding: 25px;
+        margin-bottom: 20px;
+      }
+
+      .question-number {
+        color: #9ca3af;
+        font-size: 0.85em;
+        font-weight: 600;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .question-text {
+        color: #ffffff;
+        font-size: 1.1em;
+        font-weight: 600;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .answer-option {
+        background: #252a37;
+        border: 1px solid #2a2f3e;
+        padding: 15px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+      }
+
+      .answer-option:hover {
+        background: #2a2f3e;
+        border-color: #3b82f6;
+      }
+
+      .answer-option.selected {
+        background: #1e3a5f;
+        border-color: #3b82f6;
+        border-width: 2px;
+      }
+
+      .answer-option.correct {
+        background: #0f3d2e;
+        border-color: #10b981;
+      }
+
+      .answer-option.incorrect {
+        background: #3d1f1f;
+        border-color: #ef4444;
+      }
+
+      .answer-option input[type="radio"] {
+        margin-right: 12px;
+        cursor: pointer;
+      }
+
+      .answer-label {
+        color: #d4d4d4;
+        cursor: pointer;
+        flex: 1;
+        line-height: 1.5;
+      }
+
+      .answer-option.selected .answer-label {
+        color: #ffffff;
+        font-weight: 500;
+      }
+
+      .answer-option.correct .answer-label {
+        color: #10b981;
+        font-weight: 600;
+      }
+
+      .answer-option.incorrect .answer-label {
+        color: #ef4444;
+      }
+
+      .submit-btn {
+        background: #3b82f6;
+        color: #ffffff;
+        border: none;
+        padding: 12px 30px;
+        font-size: 1em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        margin-top: 20px;
+      }
+
+      .submit-btn:hover {
+        background: #2563eb;
+      }
+
+      .submit-btn:disabled {
+        background: #2a2f3e;
+        color: #6b7280;
+        cursor: not-allowed;
+      }
+
+      .results-container {
+        background: #1a1f2e;
+        border: 1px solid #2a2f3e;
+        border-left: 4px solid #10b981;
+        padding: 30px;
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .score-display {
+        font-size: 2.5em;
+        font-weight: 700;
+        color: #10b981;
+        margin: 20px 0;
+      }
+
+      .score-text {
+        color: #9ca3af;
+        font-size: 1.1em;
+        margin-bottom: 30px;
+      }
+
+      .retake-btn {
+        background: #3b82f6;
+        color: #ffffff;
+        border: none;
+        padding: 12px 30px;
+        font-size: 1em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        margin-top: 10px;
+      }
+
+      .retake-btn:hover {
+        background: #2563eb;
+      }
+
+      .back-link {
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: 500;
+        margin-bottom: 20px;
+        display: inline-block;
+      }
+
+      .back-link:hover {
+        color: #2563eb;
+        text-decoration: underline;
+      }
+
+      .question-feedback {
+        margin-top: 15px;
+        padding: 12px;
+        border-radius: 0;
+        font-size: 0.9em;
+        display: none;
+      }
+
+      .question-feedback.correct {
+        background: #0f3d2e;
+        border-left: 3px solid #10b981;
+        color: #10b981;
+        display: block;
+      }
+
+      .question-feedback.incorrect {
+        background: #3d1f1f;
+        border-left: 3px solid #ef4444;
+        color: #ef4444;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="test-container">
+        <a href="index.html" class="back-link">← Back to Flashcards</a>
+
+        <header>
+          <h1>Sport Psychology Test</h1>
+          <p
+            style="
+              color: #9ca3af;
+              margin-top: 10px;
+              font-size: 0.95em;
+              font-weight: 400;
+            "
+          >
+            Comprehensive Assessment
+          </p>
+        </header>
+
+        <div class="test-header">
+          <div>
+            <div class="test-stats">
+              Question <strong id="currentQuestion">1</strong> of
+              <strong id="totalQuestions">0</strong>
+            </div>
+          </div>
+          <div class="test-stats">
+            Score: <strong id="currentScore">0</strong> /
+            <strong id="maxScore">0</strong>
+          </div>
+        </div>
+
+        <div id="testContent"></div>
+
+        <div id="resultsContainer" style="display: none"></div>
+      </div>
+    </div>
+
+    <script src="test.js"></script>
+  </body>
+</html>
+

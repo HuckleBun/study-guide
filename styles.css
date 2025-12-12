@@ -248,6 +248,150 @@ h1 {
     margin-left: 8px;
 }
 
+/* Test Mode Styles */
+.question-container {
+    background: #1a1f2e;
+    border: 1px solid #2a2f3e;
+    border-left: 3px solid #3b82f6;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.question-number {
+    color: #9ca3af;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.question-text {
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.answer-option {
+    background: #252a37;
+    border: 1px solid #2a2f3e;
+    padding: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.answer-option:hover {
+    background: #2a2f3e;
+    border-color: #3b82f6;
+}
+
+.answer-option.selected {
+    background: #1e3a5f;
+    border-color: #3b82f6;
+    border-width: 2px;
+}
+
+.answer-option.correct {
+    background: #0f3d2e;
+    border-color: #10b981;
+}
+
+.answer-option.incorrect {
+    background: #3d1f1f;
+    border-color: #ef4444;
+}
+
+.answer-option input[type="radio"] {
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.answer-label {
+    color: #d4d4d4;
+    cursor: pointer;
+    flex: 1;
+    line-height: 1.5;
+}
+
+.answer-option.selected .answer-label {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.answer-option.correct .answer-label {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.answer-option.incorrect .answer-label {
+    color: #ef4444;
+}
+
+.submit-btn {
+    background: #3b82f6;
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background: #2563eb;
+}
+
+.submit-btn:disabled {
+    background: #2a2f3e;
+    color: #6b7280;
+    cursor: not-allowed;
+}
+
+.results-container {
+    background: #1a1f2e;
+    border: 1px solid #2a2f3e;
+    border-left: 4px solid #10b981;
+    padding: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.score-display {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #10b981;
+    margin: 20px 0;
+}
+
+.score-text {
+    color: #9ca3af;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.retake-btn {
+    background: #3b82f6;
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.retake-btn:hover {
+    background: #2563eb;
+}
+
 @media (max-width: 768px) {
     .flashcard-container {
         grid-template-columns: 1fr;
