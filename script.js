@@ -394,24 +394,40 @@ function shuffleArray(array) {
 
 // Toggle between study and test mode
 function toggleMode() {
-    if (currentMode === 'study') {
-        currentMode = 'test';
-        initTest();
-        document.getElementById('modeToggle').textContent = 'Study Mode';
-        document.getElementById('chapterNav').style.display = 'none';
-        document.getElementById('studyStats').style.display = 'none';
-        document.getElementById('testStats').style.display = 'block';
-    } else {
-        currentMode = 'study';
-        const firstButton = document.querySelector('[data-chapter="imagery"]');
-        showChapter('imagery', firstButton);
-        document.getElementById('modeToggle').textContent = 'Take Test';
-        document.getElementById('chapterNav').style.display = 'flex';
-        document.getElementById('studyStats').style.display = 'block';
-        document.getElementById('testStats').style.display = 'none';
-        document.getElementById('resultsContainer').style.display = 'none';
+    try {
+        if (currentMode === 'study') {
+            currentMode = 'test';
+            initTest();
+            const modeToggle = document.getElementById('modeToggle');
+            if (modeToggle) modeToggle.textContent = 'Study Mode';
+            const chapterNav = document.getElementById('chapterNav');
+            if (chapterNav) chapterNav.style.display = 'none';
+            const studyStats = document.getElementById('studyStats');
+            if (studyStats) studyStats.style.display = 'none';
+            const testStats = document.getElementById('testStats');
+            if (testStats) testStats.style.display = 'block';
+        } else {
+            currentMode = 'study';
+            const firstButton = document.querySelector('[data-chapter="imagery"]');
+            if (firstButton) showChapter('imagery', firstButton);
+            const modeToggle = document.getElementById('modeToggle');
+            if (modeToggle) modeToggle.textContent = 'Take Test';
+            const chapterNav = document.getElementById('chapterNav');
+            if (chapterNav) chapterNav.style.display = 'flex';
+            const studyStats = document.getElementById('studyStats');
+            if (studyStats) studyStats.style.display = 'block';
+            const testStats = document.getElementById('testStats');
+            if (testStats) testStats.style.display = 'none';
+            const resultsContainer = document.getElementById('resultsContainer');
+            if (resultsContainer) resultsContainer.style.display = 'none';
+        }
+    } catch (error) {
+        console.error('Error in toggleMode:', error);
     }
 }
+
+// Make function globally accessible
+window.toggleMode = toggleMode;
 
 // Initialize test
 function initTest() {
@@ -589,6 +605,17 @@ function flipCard(card) {
 // Initialize with first chapter
 window.onload = function() {
     const firstButton = document.querySelector('[data-chapter="imagery"]');
-    showChapter('imagery', firstButton);
+    if (firstButton) {
+        showChapter('imagery', firstButton);
+    }
+    
+    // Add event listener as backup for the toggle button
+    const modeToggleBtn = document.getElementById('modeToggle');
+    if (modeToggleBtn) {
+        modeToggleBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleMode();
+        });
+    }
 };
 
