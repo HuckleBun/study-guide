@@ -5,9 +5,9 @@ const testQuestions = [
     question: "What is mental imagery?",
     options: [
       "The cognitive process of creating or recreating experiences in the mind using all senses to visualize actions without physical execution",
-      "The process of mentally rehearsing skills by imagining successful performance outcomes",
-      "A visualization technique that uses only visual senses to picture desired results",
-      "A mental practice method that combines physical movement with cognitive visualization",
+      "A technique that requires physical movement and actual muscle activation to be effective and cannot work without simultaneous bodily motion",
+      "A visualization method that only works for individuals who identify as visual learners and cannot be used effectively by other learning styles",
+      "A form of hypnosis and psychological manipulation used to control athlete behavior and decision-making processes without their awareness",
     ],
     correct: 0,
     chapter: "imagery",
@@ -16,9 +16,9 @@ const testQuestions = [
     question: "What is the difference between internal and external imagery?",
     options: [
       "Internal imagery is from a first-person perspective, while external imagery is from a third-person perspective",
-      "Internal imagery focuses on kinesthetic sensations, while external imagery focuses on visual details",
-      "Internal imagery is used during performance, while external imagery is used during practice",
-      "Internal imagery emphasizes outcomes, while external imagery emphasizes technique",
+      "Internal imagery is consistently more effective than external imagery for all athletes regardless of sport type or individual preferences",
+      "Internal imagery requires simultaneous physical movement and muscle activation, while external imagery does not involve any physical components",
+      "Internal imagery is specifically designed for individual sports, while external imagery is exclusively reserved for team sports and group activities",
     ],
     correct: 0,
     chapter: "imagery",
@@ -27,9 +27,9 @@ const testQuestions = [
     question: "Why do athletes use imagery?",
     options: [
       "To improve performance, enhance motivation, build confidence, and practice skills mentally",
-      "To enhance focus, reduce anxiety, and mentally prepare for competition",
-      "To replace physical training when injured or unable to practice",
-      "To analyze game footage and develop strategic plans",
+      "To completely replace all physical training and practice sessions, eliminating the need for actual physical preparation",
+      "To communicate directly with coaches and receive real-time instructions during competition through mental visualization techniques",
+      "To analyze opponents' weaknesses and develop counter-strategies by accessing information not available through normal observation",
     ],
     correct: 0,
     chapter: "imagery",
@@ -38,9 +38,9 @@ const testQuestions = [
     question: "What are the keys to effective imagery?",
     options: [
       "Vividness and controllability",
-      "Clarity and consistency",
-      "Frequency and duration",
-      "Realism and repetition",
+      "Speed and intensity",
+      "Location and timing",
+      "Duration and frequency alone",
     ],
     correct: 0,
     chapter: "imagery",
@@ -49,9 +49,9 @@ const testQuestions = [
     question: "According to psychoneuromuscular theory, how does imagery work?",
     options: [
       "Imagery activates the same neural pathways as physical practice",
-      "Imagery creates mental blueprints that guide physical performance",
-      "Imagery strengthens the connection between mind and body through visualization",
-      "Imagery improves performance by enhancing cognitive understanding of skills",
+      "Imagery only works if combined with physical movement",
+      "Imagery has no physiological effects and is purely psychological",
+      "Imagery requires external visualization aids like videos or pictures",
     ],
     correct: 0,
     chapter: "imagery",
@@ -62,9 +62,9 @@ const testQuestions = [
     question: "What does SMARTS stand for in goal setting?",
     options: [
       "Specific, Measurable, Action-oriented, Realistic, Timely, Self-determined",
-      "Specific, Measurable, Achievable, Relevant, Time-bound, Systematic",
-      "Strategic, Meaningful, Attainable, Realistic, Trackable, Self-directed",
-      "Structured, Measurable, Action-based, Realistic, Time-sensitive, Self-motivated",
+      "Simple, Meaningful, Achievable, Relevant, Time-bound, Structured",
+      "Strategic, Motivating, Attainable, Rewarding, Trackable, Sustainable",
+      "Systematic, Measurable, Ambitious, Realistic, Targeted, Specific",
     ],
     correct: 0,
     chapter: "goals",
@@ -74,9 +74,9 @@ const testQuestions = [
       "What is the difference between outcome, performance, and process goals?",
     options: [
       "Outcome goals focus on winning, performance goals focus on personal achievement, process goals focus on specific actions",
-      "Outcome goals focus on results, performance goals focus on improvement, process goals focus on technique",
-      "Outcome goals are competitive, performance goals are personal, process goals are skill-based",
-      "Outcome goals are external, performance goals are internal, process goals are behavioral",
+      "Outcome goals are exclusively short-term objectives, performance goals are medium-term objectives, process goals are long-term objectives",
+      "Outcome goals are specifically designed for teams, performance goals are only for individuals, process goals are exclusively for coaches",
+      "There is no meaningful difference between these three types of goals, and they can be used interchangeably",
     ],
     correct: 0,
     chapter: "goals",
@@ -97,9 +97,9 @@ const testQuestions = [
     question: "Why does goal setting sometimes NOT work?",
     options: [
       "Setting unrealistic goals, lack of commitment, insufficient feedback, or poor goal specificity",
-      "Focusing only on outcome goals without process or performance goals",
-      "Setting too many goals simultaneously or failing to monitor progress regularly",
-      "Lack of athlete involvement in goal creation or insufficient support from coaches",
+      "Goal setting always works when properly implemented, with failures only occurring due to improper application",
+      "Athletes naturally resist any form of goal setting due to inherent psychological barriers and opposition",
+      "Goal setting only fails when athletes lack natural talent and physical ability, regardless of other factors",
     ],
     correct: 0,
     chapter: "goals",
@@ -108,9 +108,9 @@ const testQuestions = [
     question: "What is a common problem in goal setting?",
     options: [
       "Setting too many goals at once",
-      "Focusing exclusively on long-term outcome goals",
-      "Not adjusting goals when circumstances change",
-      "Setting goals that are too challenging to achieve",
+      "Writing goals down on paper",
+      "Sharing goals with teammates and coaches",
+      "Setting goals that are too easy to achieve",
     ],
     correct: 0,
     chapter: "goals",
@@ -122,9 +122,9 @@ const testQuestions = [
       "What are the four components of effective leadership in sport according to Weinberg and Gould?",
     options: [
       "Leader's qualities, Leadership styles, Situational factors, Follower's qualities",
-      "Leader characteristics, Behavioral approaches, Contextual elements, Team member attributes",
-      "Personal traits, Communication methods, Environmental conditions, Athlete characteristics",
-      "Leadership skills, Management techniques, Situational awareness, Team dynamics",
+      "Communication abilities, Motivation techniques, Strategy development, Discipline systems",
+      "Experience levels, Knowledge base, Charisma traits, Authority structures",
+      "Planning processes, Organizing methods, Leading approaches, Controlling mechanisms",
     ],
     correct: 0,
     chapter: "leadership",
@@ -134,9 +134,9 @@ const testQuestions = [
       "What is the difference between relationship-oriented and task-oriented leaders?",
     options: [
       "Relationship-oriented leaders focus on building relationships and team cohesion, while task-oriented leaders focus on achieving goals and results",
-      "Relationship-oriented leaders emphasize communication and support, while task-oriented leaders emphasize structure and organization",
-      "Relationship-oriented leaders prioritize athlete well-being, while task-oriented leaders prioritize performance outcomes",
-      "Relationship-oriented leaders use democratic styles, while task-oriented leaders use autocratic styles",
+      "Relationship-oriented leaders are consistently more effective than task-oriented leaders across all sport contexts and situations",
+      "Relationship-oriented leaders work primarily with individual athletes, while task-oriented leaders work exclusively with teams and groups",
+      "There is no meaningful difference between relationship-oriented and task-oriented leaders in their approaches or effectiveness",
     ],
     correct: 0,
     chapter: "leadership",
@@ -145,9 +145,9 @@ const testQuestions = [
     question: "What are the four components of Transformational Leadership?",
     options: [
       "Idealized influence, Inspirational motivation, Intellectual stimulation, Individualized consideration",
-      "Charismatic influence, Vision communication, Creative thinking, Personal attention",
-      "Role modeling, Vision sharing, Innovation encouragement, Individual support",
-      "Respect building, Commitment inspiring, Critical thinking, Mentoring",
+      "Vision development, Communication skills, Empowerment strategies, Recognition programs",
+      "Planning processes, Execution methods, Evaluation techniques, Improvement initiatives",
+      "Authority structures, Discipline systems, Organizational structure, Control mechanisms",
     ],
     correct: 0,
     chapter: "leadership",
@@ -156,9 +156,9 @@ const testQuestions = [
     question: "What is the trait approach to studying leadership?",
     options: [
       "It suggests leaders possess inherent personality characteristics",
-      "It focuses on identifying specific personality traits that predict leadership effectiveness",
-      "It emphasizes that leadership qualities are fixed and cannot be developed",
-      "It suggests that leadership is determined by genetic factors alone",
+      "It focuses on what leaders do rather than who they are",
+      "It emphasizes the interaction between leader, followers, and situation",
+      "It states that anyone can become a leader with proper training",
     ],
     correct: 0,
     chapter: "leadership",
@@ -167,9 +167,9 @@ const testQuestions = [
     question: "In sport contexts, how do leaders differ from managers?",
     options: [
       "Leaders inspire and create vision, while managers organize and maintain systems",
-      "Leaders focus on motivation and direction, while managers focus on planning and administration",
-      "Leaders influence through relationships, while managers influence through authority",
-      "Leaders emphasize change and innovation, while managers emphasize stability and efficiency",
+      "Leaders are more important than managers in sport",
+      "Leaders work with athletes, while managers work with coaches",
+      "There is no difference between leaders and managers in sport contexts",
     ],
     correct: 0,
     chapter: "leadership",
@@ -178,9 +178,9 @@ const testQuestions = [
     question: "What did John Wooden emphasize about success?",
     options: [
       "Success is about doing your best and maximizing potential, not just winning",
-      "Success comes from focusing on the process and effort rather than outcomes",
-      "Success is defined by personal improvement and character development",
-      "Success requires balancing individual achievement with team goals",
+      "Success is measured only by wins and losses",
+      "Success requires natural talent above all else",
+      "Success is achieved through strict discipline and punishment",
     ],
     correct: 0,
     chapter: "leadership",
@@ -191,9 +191,9 @@ const testQuestions = [
     question: "What is social loafing?",
     options: [
       "The tendency for individuals to exert less effort when working in a group compared to working alone",
-      "The phenomenon where team members reduce their individual contributions in group settings",
-      "A decrease in individual motivation and effort when individual contributions cannot be identified",
-      "The tendency for some team members to rely on others to complete shared tasks",
+      "The tendency for teams to consistently perform better than individuals working alone in all situations",
+      "A team-building exercise that involves physical activity and group challenges designed to improve collaboration",
+      "The process of assigning specific roles and responsibilities within a team to ensure clear function distribution",
     ],
     correct: 0,
     chapter: "teams",
@@ -202,9 +202,9 @@ const testQuestions = [
     question: "When is social loafing most likely to occur?",
     options: [
       "When individual contributions are not identifiable or when tasks are perceived as unimportant",
-      "When individual effort cannot be measured or when group size is large",
-      "When team members feel their contribution won't be noticed or when accountability is low",
-      "When tasks lack personal relevance or when team cohesion is weak",
+      "When teams are highly cohesive and well-organized, as strong team bonds reduce individual motivation",
+      "When individual accountability is high and contributions are measurable, because clear measurement creates pressure",
+      "When team size is very small (2-3 members), as smaller groups experience more social loafing than larger groups",
     ],
     correct: 0,
     chapter: "teams",
@@ -213,9 +213,9 @@ const testQuestions = [
     question: "What are the typical stages that sport teams work through?",
     options: [
       "Forming, Storming, Norming, Performing",
-      "Orientation, Conflict, Cohesion, Achievement",
-      "Assembly, Adjustment, Integration, Excellence",
-      "Initiation, Development, Unification, Mastery",
+      "Planning, Training, Competing, Evaluating",
+      "Selection, Integration, Optimization, Domination",
+      "Introduction, Development, Mastery, Excellence",
     ],
     correct: 0,
     chapter: "teams",
@@ -224,9 +224,9 @@ const testQuestions = [
     question: "According to Steiner's model, what affects team performance?",
     options: [
       "Actual Productivity = Potential Productivity - (Motivation Losses + Coordination Losses)",
-      "Team performance equals potential performance minus losses from reduced effort and poor coordination",
-      "Team effectiveness is determined by subtracting motivation and coordination deficits from maximum potential",
-      "Actual team output is calculated by subtracting effort losses and synchronization problems from ideal performance",
+      "Potential Productivity = Actual Productivity - (Motivation Losses + Coordination Losses)",
+      "Actual Productivity = Potential Productivity + (Motivation Losses + Coordination Losses)",
+      "Potential Productivity = Actual Productivity + (Motivation Losses + Coordination Losses)",
     ],
     correct: 0,
     chapter: "teams",
@@ -236,9 +236,9 @@ const testQuestions = [
       "What is the difference between task cohesion and social cohesion?",
     options: [
       "Task cohesion focuses on working together to achieve goals, while social cohesion focuses on interpersonal relationships",
-      "Task cohesion emphasizes shared objectives and performance, while social cohesion emphasizes friendship and social bonds",
-      "Task cohesion relates to commitment to team goals, while social cohesion relates to liking and enjoying teammates",
-      "Task cohesion is about functional unity, while social cohesion is about emotional connection",
+      "Task cohesion is consistently more important than social cohesion for all teams regardless of sport type or competitive level",
+      "Task cohesion is specifically designed for competitive teams, while social cohesion is exclusively for recreational teams and activities",
+      "There is no meaningful difference between task and social cohesion, and they can be used interchangeably to describe team dynamics",
     ],
     correct: 0,
     chapter: "teams",
@@ -249,8 +249,8 @@ const testQuestions = [
     options: [
       "Task cohesion",
       "Social cohesion",
-      "Both are equally important for team performance",
-      "The relationship depends on the type of sport",
+      "Neither type of cohesion affects performance",
+      "The relationship varies randomly and cannot be predicted",
     ],
     correct: 0,
     chapter: "teams",
@@ -259,9 +259,9 @@ const testQuestions = [
     question: "What happens during the 'storming' stage of team development?",
     options: [
       "Conflict arises, disagreements occur, and team members test boundaries",
-      "Team members challenge roles, compete for positions, and experience interpersonal friction",
-      "Disagreements emerge about team goals, leadership, and individual responsibilities",
-      "Power struggles develop, conflicts surface, and team members establish their positions",
+      "Team members come together harmoniously and roles are immediately established",
+      "Team functions effectively and high performance is achieved",
+      "Cohesion develops smoothly and team unity emerges without conflict",
     ],
     correct: 0,
     chapter: "teams",
@@ -356,32 +356,39 @@ function updateTestDisplay() {
                    )
                    .join("")}
              </div>
-             <div style="display: flex; gap: 12px; margin-top: 20px; align-items: center;" id="buttonContainer">
-                 ${
-                   hasPrevious
-                     ? `
-                     <button class="prev-btn" 
-                             id="prevBtn"
-                             type="button"
-                             onclick="previousQuestion(); return false;">
-                         Previous
-                     </button>
-                 `
-                     : ""
-                 }
-                 <button class="submit-btn" 
-                         id="nextBtn"
+             ${
+               hasPrevious
+                 ? `
+                 <button class="nav-arrow-btn prev-arrow-btn" 
+                         id="prevBtn"
                          type="button"
-                         onclick="nextQuestion(); return false;"
-                         ${!hasAnswer ? "disabled" : ""}
-                         style="flex: 1;">
-                     ${
+                         onclick="previousQuestion(); return false;"
+                         title="Previous Question">
+                     <span class="arrow-icon">←</span>
+                     <span>Back</span>
+                 </button>
+             `
+                 : ""
+             }
+             <button class="nav-arrow-btn next-arrow-btn" 
+                     id="nextBtn"
+                     type="button"
+                     onclick="nextQuestion(); return false;"
+                     ${!hasAnswer ? "disabled" : ""}
+                     title="${
                        currentQuestionIndex === currentTest.length - 1
                          ? "Submit Test"
                          : "Next Question"
-                     }
-                 </button>
-             </div>
+                     }">
+                 <span>${
+                   currentQuestionIndex === currentTest.length - 1
+                     ? "Submit"
+                     : "Next"
+                 }</span>
+                 <span class="arrow-icon">${
+                   currentQuestionIndex === currentTest.length - 1 ? "✓" : "→"
+                 }</span>
+             </button>
          </div>
      `;
 
@@ -489,59 +496,57 @@ function submitTest() {
   resultsContainer.style.visibility = "visible";
   resultsContainer.innerHTML = `
         <div class="results-container">
-            <h2 style="color: #ffffff; margin-bottom: 20px;">Test Results</h2>
+            <h2 style="color: #ffffff; margin-bottom: 20px; font-weight: 600;">Test Results</h2>
             <div class="score-display">${score} / ${currentTest.length}</div>
             <div class="score-text">${percentage}% Correct</div>
             
-            <div style="margin-top: 40px; text-align: left;">
-                <h3 style="color: #ffffff; margin-bottom: 20px; font-size: 1.3em;">Question Review</h3>
+            <div style="margin-top: 50px; text-align: left;">
+                <h3 class="review-section-title">Question Review</h3>
                 ${sortedResults
                   .map(
-                    (result, idx) => `
-                    <div class="question-container" style="margin-bottom: 25px; ${
-                      result.isCorrect
-                        ? "border-left-color: #10b981;"
-                        : "border-left-color: #ef4444;"
+                    (result) => `
+                    <div class="review-question-container ${
+                      result.isCorrect ? "correct" : "incorrect"
                     }">
-                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                            <span style="background: ${
-                              result.isCorrect ? "#10b981" : "#ef4444"
-                            }; color: #ffffff; padding: 4px 12px; font-weight: 600; margin-right: 15px;">
+                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                            <span class="review-badge ${
+                              result.isCorrect ? "correct" : "incorrect"
+                            }">
                                 ${
                                   result.isCorrect ? "✓ Correct" : "✗ Incorrect"
                                 }
                             </span>
-                            <span style="color: #9ca3af; font-size: 0.9em;">Question ${
+                            <span class="review-question-number">Question ${
                               result.originalIndex + 1
                             }</span>
                         </div>
-                        <div class="question-text" style="margin-bottom: 20px;">${
+                        <div class="question-text" style="margin-bottom: 25px; color: #ffffff;">${
                           result.question
                         }</div>
-                        <div style="margin-bottom: 10px;">
-                            <strong style="color: ${
-                              result.isCorrect ? "#10b981" : "#ef4444"
-                            };">
+                        <div style="margin-bottom: 15px;">
+                            <span class="review-answer-label ${
+                              result.isCorrect ? "correct" : "incorrect"
+                            }">
                                 ${
                                   result.isCorrect
                                     ? "Your Answer (Correct):"
                                     : "Your Answer:"
                                 }
-                            </strong>
+                            </span>
                         </div>
                         ${
                           result.userAnswer !== -1
                             ? `
                         <div class="answer-option ${
                           result.isCorrect ? "correct" : "incorrect"
-                        }" style="margin-bottom: 15px;">
+                        }" style="margin-bottom: 20px; pointer-events: none;">
                             <label class="answer-label">${
                               result.options[result.userAnswer]
                             }</label>
                         </div>
                         `
                             : `
-                        <div class="answer-option incorrect" style="margin-bottom: 15px;">
+                        <div class="answer-option incorrect" style="margin-bottom: 20px; pointer-events: none;">
                             <label class="answer-label">(No answer selected)</label>
                         </div>
                         `
@@ -549,13 +554,13 @@ function submitTest() {
                         ${
                           !result.isCorrect
                             ? `
-                            <div style="margin-top: 15px;">
-                                <strong style="color: #10b981;">Correct Answer:</strong>
-                            </div>
-                            <div class="answer-option correct" style="margin-top: 10px;">
-                                <label class="answer-label">${
-                                  result.options[result.correctAnswer]
-                                }</label>
+                            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #2a2f3e;">
+                                <span class="review-answer-label correct">Correct Answer:</span>
+                                <div class="answer-option correct" style="margin-top: 12px; pointer-events: none;">
+                                    <label class="answer-label">${
+                                      result.options[result.correctAnswer]
+                                    }</label>
+                                </div>
                             </div>
                         `
                             : ""
@@ -566,7 +571,7 @@ function submitTest() {
                   .join("")}
             </div>
             
-            <div style="margin-top: 40px;">
+            <div style="margin-top: 50px; padding-top: 30px; border-top: 1px solid #2a2f3e;">
                 <button class="retake-btn" onclick="retakeTest()">Retake Test</button>
             </div>
         </div>
