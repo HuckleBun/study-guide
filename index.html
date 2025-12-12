@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sport Psychology Flash Cards</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Sport Psychology Flash Cards</h1>
+        <p
+          style="
+            color: #9ca3af;
+            margin-top: 10px;
+            font-size: 0.95em;
+            font-weight: 400;
+          "
+        >
+          Study Guide for Test Preparation
+        </p>
+      </header>
+
+      <div class="chapter-nav">
+        <button
+          class="chapter-btn active"
+          data-chapter="imagery"
+          onclick="showChapter('imagery', this)"
+        >
+          Chapter 14: Imagery
+        </button>
+        <button
+          class="chapter-btn"
+          data-chapter="goals"
+          onclick="showChapter('goals', this)"
+        >
+          Chapter 16: Goal Setting
+        </button>
+        <button
+          class="chapter-btn"
+          data-chapter="leadership"
+          onclick="showChapter('leadership', this)"
+        >
+          Chapter 10: Leadership
+        </button>
+        <button
+          class="chapter-btn"
+          data-chapter="teams"
+          onclick="showChapter('teams', this)"
+        >
+          Chapter 9: Team Dynamics
+        </button>
+      </div>
+
+      <div id="content"></div>
+
+      <div class="stats">
+        <div class="stats-info">
+          <div class="stat-item">
+            Total Cards: <span class="stat-value" id="totalCards">0</span>
+          </div>
+          <div class="stat-item">
+            Current Chapter:
+            <span class="stat-value" id="currentChapter">-</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
