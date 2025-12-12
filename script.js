@@ -394,8 +394,10 @@ function shuffleArray(array) {
 
 // Toggle between study and test mode
 function toggleMode() {
+    console.log('toggleMode called, currentMode:', currentMode);
     try {
         if (currentMode === 'study') {
+            console.log('Switching to test mode');
             currentMode = 'test';
             initTest();
             const modeToggle = document.getElementById('modeToggle');
@@ -407,6 +409,7 @@ function toggleMode() {
             const testStats = document.getElementById('testStats');
             if (testStats) testStats.style.display = 'block';
         } else {
+            console.log('Switching to study mode');
             currentMode = 'study';
             const firstButton = document.querySelector('[data-chapter="imagery"]');
             if (firstButton) showChapter('imagery', firstButton);
@@ -423,6 +426,7 @@ function toggleMode() {
         }
     } catch (error) {
         console.error('Error in toggleMode:', error);
+        alert('Error switching mode: ' + error.message);
     }
 }
 
@@ -602,6 +606,35 @@ function flipCard(card) {
     card.classList.toggle('flipped');
 }
 
+// Setup toggle button function
+function setupToggleButton() {
+    const modeToggleBtn = document.getElementById('modeToggle');
+    if (modeToggleBtn) {
+        console.log('Setting up toggle button');
+        // Remove any existing listeners by cloning the node
+        const newBtn = modeToggleBtn.cloneNode(true);
+        modeToggleBtn.parentNode.replaceChild(newBtn, modeToggleBtn);
+        
+        // Add event listener
+        newBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Button clicked');
+            toggleMode();
+        });
+        
+        // Also make it accessible via onclick for compatibility
+        newBtn.onclick = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMode();
+            return false;
+        };
+    } else {
+        console.error('Mode toggle button not found');
+    }
+}
+
 // Initialize with first chapter
 window.onload = function() {
     const firstButton = document.querySelector('[data-chapter="imagery"]');
@@ -609,13 +642,17 @@ window.onload = function() {
         showChapter('imagery', firstButton);
     }
     
-    // Add event listener as backup for the toggle button
-    const modeToggleBtn = document.getElementById('modeToggle');
-    if (modeToggleBtn) {
-        modeToggleBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            toggleMode();
-        });
-    }
+    // Set up toggle button
+    setupToggleButton();
 };
+
+// Also set up when DOM is ready (in case window.onload fires too late)
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+        setupToggleButton();
+    });
+} else {
+    // DOM already loaded
+    setupToggleButton();
+}
 
