@@ -326,60 +326,85 @@ function updateTestDisplay() {
   const hasAnswer = userAnswers[currentQuestionIndex] !== undefined;
 
   testContent.innerHTML = `
-        <div class="question-container">
-            <div class="question-number">Question ${
-              currentQuestionIndex + 1
-            } of ${currentTest.length}</div>
-            <div class="question-text">${currentQuestion.question}</div>
-            <div class="answers">
-                ${currentQuestion.shuffledOptions
-                  .map(
-                    (option, idx) => `
-                    <div class="answer-option ${
-                      userAnswers[currentQuestionIndex] === idx
-                        ? "selected"
-                        : ""
-                    }" 
-                         onclick="selectAnswer(${idx})">
-                        <input type="radio" 
-                               name="answer" 
-                               value="${idx}" 
-                               ${
-                                 userAnswers[currentQuestionIndex] === idx
-                                   ? "checked"
-                                   : ""
-                               }
-                               onchange="selectAnswer(${idx})">
-                        <label class="answer-label">${option}</label>
-                    </div>
-                `
-                  )
-                  .join("")}
-            </div>
-            <div style="display: flex; gap: 12px; margin-top: 20px; align-items: center;">
-                ${
-                  hasPrevious
-                    ? `
-                    <button class="prev-btn" 
-                            onclick="previousQuestion()">
-                        Previous
-                    </button>
-                `
-                    : ""
-                }
-                <button class="submit-btn" 
-                        onclick="nextQuestion()" 
-                        ${!hasAnswer ? "disabled" : ""}
-                        style="flex: 1;">
-                    ${
-                      currentQuestionIndex === currentTest.length - 1
-                        ? "Submit Test"
-                        : "Next Question"
-                    }
-                </button>
-            </div>
-        </div>
-    `;
+         <div class="question-container">
+             <div class="question-number">Question ${
+               currentQuestionIndex + 1
+             } of ${currentTest.length}</div>
+             <div class="question-text">${currentQuestion.question}</div>
+             <div class="answers">
+                 ${currentQuestion.shuffledOptions
+                   .map(
+                     (option, idx) => `
+                     <div class="answer-option ${
+                       userAnswers[currentQuestionIndex] === idx
+                         ? "selected"
+                         : ""
+                     }" 
+                          onclick="selectAnswer(${idx})">
+                         <input type="radio" 
+                                name="answer" 
+                                value="${idx}" 
+                                ${
+                                  userAnswers[currentQuestionIndex] === idx
+                                    ? "checked"
+                                    : ""
+                                }
+                                onchange="selectAnswer(${idx})">
+                         <label class="answer-label">${option}</label>
+                     </div>
+                 `
+                   )
+                   .join("")}
+             </div>
+             <div style="display: flex; gap: 12px; margin-top: 20px; align-items: center;" id="buttonContainer">
+                 ${
+                   hasPrevious
+                     ? `
+                     <button class="prev-btn" 
+                             id="prevBtn"
+                             type="button"
+                             onclick="previousQuestion(); return false;">
+                         Previous
+                     </button>
+                 `
+                     : ""
+                 }
+                 <button class="submit-btn" 
+                         id="nextBtn"
+                         type="button"
+                         onclick="nextQuestion(); return false;"
+                         ${!hasAnswer ? "disabled" : ""}
+                         style="flex: 1;">
+                     ${
+                       currentQuestionIndex === currentTest.length - 1
+                         ? "Submit Test"
+                         : "Next Question"
+                     }
+                 </button>
+             </div>
+         </div>
+     `;
+
+  // Set up event listeners after rendering
+  setTimeout(function () {
+    const prevBtn = document.getElementById("prevBtn");
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        previousQuestion();
+      });
+    }
+
+    const nextBtn = document.getElementById("nextBtn");
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (userAnswers[currentQuestionIndex] !== undefined) {
+          nextQuestion();
+        }
+      });
+    }
+  }, 0);
 }
 
 // Previous question
@@ -394,6 +419,7 @@ function previousQuestion() {
 window.previousQuestion = previousQuestion;
 window.nextQuestion = nextQuestion;
 window.selectAnswer = selectAnswer;
+window.retakeTest = retakeTest;
 
 // Select answer
 function selectAnswer(index) {
@@ -422,21 +448,31 @@ function submitTest() {
   const questionResults = [];
 
   currentTest.forEach((question, idx) => {
-    const isCorrect = userAnswers[idx] === question.shuffledCorrect;
+    const userAnswer = userAnswers[idx];
+    const isCorrect =
+      userAnswer !== undefined && userAnswer === question.shuffledCorrect;
     if (isCorrect) {
       score++;
     }
     questionResults.push({
       question: question.question,
-      userAnswer: userAnswers[idx],
+      userAnswer: userAnswer !== undefined ? userAnswer : -1, // -1 means not answered
       correctAnswer: question.shuffledCorrect,
       options: question.shuffledOptions,
       isCorrect: isCorrect,
+      originalIndex: idx, // Store original index for proper numbering
     });
   });
 
   const percentage = Math.round((score / currentTest.length) * 100);
   const resultsContainer = document.getElementById("resultsContainer");
+  const testContent = document.getElementById("testContent");
+
+  if (!resultsContainer) {
+    console.error("Results container not found");
+    alert("Error: Results container not found. Please refresh the page.");
+    return;
+  }
 
   // Sort: incorrect first, then correct
   const sortedResults = [...questionResults].sort((a, b) => {
@@ -444,7 +480,13 @@ function submitTest() {
     return a.isCorrect ? 1 : -1;
   });
 
+  // Hide test content and show results
+  if (testContent) {
+    testContent.style.display = "none";
+  }
+
   resultsContainer.style.display = "block";
+  resultsContainer.style.visibility = "visible";
   resultsContainer.innerHTML = `
         <div class="results-container">
             <h2 style="color: #ffffff; margin-bottom: 20px;">Test Results</h2>
@@ -470,7 +512,7 @@ function submitTest() {
                                 }
                             </span>
                             <span style="color: #9ca3af; font-size: 0.9em;">Question ${
-                              questionResults.indexOf(result) + 1
+                              result.originalIndex + 1
                             }</span>
                         </div>
                         <div class="question-text" style="margin-bottom: 20px;">${
@@ -487,6 +529,9 @@ function submitTest() {
                                 }
                             </strong>
                         </div>
+                        ${
+                          result.userAnswer !== -1
+                            ? `
                         <div class="answer-option ${
                           result.isCorrect ? "correct" : "incorrect"
                         }" style="margin-bottom: 15px;">
@@ -494,6 +539,13 @@ function submitTest() {
                               result.options[result.userAnswer]
                             }</label>
                         </div>
+                        `
+                            : `
+                        <div class="answer-option incorrect" style="margin-bottom: 15px;">
+                            <label class="answer-label">(No answer selected)</label>
+                        </div>
+                        `
+                        }
                         ${
                           !result.isCorrect
                             ? `
@@ -520,18 +572,48 @@ function submitTest() {
         </div>
     `;
 
-  // Scroll to results
-  resultsContainer.scrollIntoView({ behavior: "smooth" });
+  // Scroll to top of page to see results
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  // Also try scrolling to results container
+  setTimeout(function () {
+    resultsContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 100);
 }
 
 // Retake test
 function retakeTest() {
+  const resultsContainer = document.getElementById("resultsContainer");
+  const testContent = document.getElementById("testContent");
+
+  if (resultsContainer) {
+    resultsContainer.style.display = "none";
+  }
+
+  if (testContent) {
+    testContent.style.display = "block";
+  }
+
   initTest();
-  document.getElementById("resultsContainer").style.display = "none";
-  document.getElementById("testContent").scrollIntoView({ behavior: "smooth" });
+
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Setup event listeners for buttons (backup for GitHub Pages)
+function setupEventListeners() {
+  // This will be called after each question is rendered
+  // We'll set up listeners in updateTestDisplay instead
 }
 
 // Initialize on load
 window.onload = function () {
   initTest();
+
+  // Also set up when DOM is ready as backup
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      // Event listeners will be set up dynamically in updateTestDisplay
+    });
+  }
 };
